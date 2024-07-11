@@ -1,0 +1,44 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 0 21%;
+    /* Adjusts to make 3 cards per row */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 0 46%;
+        /* Adjusts to make 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 0 100%;
+        /* Adjusts to make 1 card per row on smallest screens */
+    }
+}
