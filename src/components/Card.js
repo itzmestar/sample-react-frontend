@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import "./Card.css";
 
 const Card = ({ item, index, moveCard, onClick }) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
 
   const [, drop] = useDrop({
     accept: "card",
@@ -26,7 +26,7 @@ const Card = ({ item, index, moveCard, onClick }) => {
   drag(drop(ref));
 
   const opacity = isDragging ? 0.4 : 1;
-  const thumbnail = `thumbnail${index + 1}.jpg`;
+  const thumbnail = `thumbnail${index + 1}.jpg`; // Change as per your image naming
 
   return (
     <div

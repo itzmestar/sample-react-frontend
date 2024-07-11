@@ -8,7 +8,7 @@
 
 .card {
     flex: 0 0 calc(30% - 20px);
-    /* Each card takes up roughly 30% of the container width, considering margins */
+    /* Adjust to ensure 3 cards per row */
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -39,6 +39,6 @@
 @media (max-width: 480px) {
     .card {
         flex: 0 0 calc(100% - 20px);
-        /* 1 card per row on the smallest screens */
+        /* 1 card per row on smallest screens */
     }
 }
