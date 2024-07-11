@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CardList from "./components/CardList";
+import Overlay from "./components/Overlay";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [overlayImage, setOverlayImage] = useState(null);
+
+  const handleCardClick = (image) => {
+    setOverlayImage(image);
+  };
+
+  const handleCloseOverlay = () => {
+    setOverlayImage(null);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Document Cards</h1>
+      <CardList onClick={handleCardClick} />
+      {overlayImage && (
+        <Overlay image={overlayImage} onClose={handleCloseOverlay} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
